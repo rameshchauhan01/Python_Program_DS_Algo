@@ -25,3 +25,15 @@ my_list = [2,1,4,3,5,6,7,8]
 n = 3
 x = list(divide_chunks(my_list, n))
 print(x)
+# creating the list using the iterator it can be usefull to pass the different size list in unit test
+List = []
+# Adding elements to the List
+# using Iterator
+for i in range(4):
+    List.append(i)
+    print (List)
+# Adding Tuples to the List
+List.append((8, 9))
+print("\nList after Addition of a Tuple: ")
+print(List)
+
