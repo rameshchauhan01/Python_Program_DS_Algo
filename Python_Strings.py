@@ -14,21 +14,37 @@ import unittest
 #4)Access and extract portions of strings :  slicing is used
 #5)Use built-in Python functions with characters and strings
 #6)Use methods to manipulate and modify string data : Most frequent split and join function are used.
-## Reverse the word in a sentence and wtite the possible unit test for the methods
+## Reverse individual words in a sentence e.g: 'Today is monday' > 'yadoT si yadnom'
 def reverse_wordInSen(s):
     news=s.split(" ")
     revs=[res[::-1] for res in news]
     nres=" ".join(revs)
     return nres
+#For above code there is best approach if traversing the string from both ends
+
+##Reverse the words in a given string or print word of string in reverse order e.g: 'Today is monday' > 'monday is Today'
 def reverse_sentence(s):
     news=s.split(" ")
     revs=news[-1::-1]
     nres=" ".join(revs)
     return nres
+#Reverse  string according to the number of words e.g: 'Today is monday' > 'monday is Today'
+def reverse_sentenceNOW(s):
+    news=s.split(" ")
+    revs=[news[i] for i in range(len(news)) if i%2==0]
+    wd=revs[-1::-1]
+    evenRev=" ".join(wd)
+    revs1=[news[i] for i in range(len(news)) if i%2!=0]
+    evenRev1=" ".join(revs1)
+    nres=evenRev+" "+evenRev1
+    return nres
+
 #Driver code
-s='Hellow ramesh how are you?'
-print(reverse_sentence(s))
+s='Today is monday uff'
 print(reverse_wordInSen(s))
+print(reverse_sentence(s))
+print(reverse_sentenceNOW(s))
+
 class TestSentenceReverse(unittest.TestCase):
 
     def test_reverse_wordInSen(self):
