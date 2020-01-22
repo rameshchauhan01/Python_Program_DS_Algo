@@ -17,13 +17,11 @@ import unittest
 ## Reverse the word in a sentence and wtite the possible unit test for the methods
 def reverse_wordInSen(s):
     news=s.split(" ")
-    print(news)
     revs=[res[::-1] for res in news]
     nres=" ".join(revs)
     return nres
 def reverse_sentence(s):
     news=s.split(" ")
-    print(news)
     revs=news[-1::-1]
     nres=" ".join(revs)
     return nres
