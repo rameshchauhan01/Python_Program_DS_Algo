@@ -37,3 +37,25 @@ List.append((8, 9))
 print("\nList after Addition of a Tuple: ")
 print(List)
 
+#sort the second items in the list contains tuple
+#with sort function
+def Sort_list(tup):
+    # reverse = None (Sorts in Ascending order)
+    # key is set to sort using second element of
+    # sublist lambda has been used
+    tup.sort(key=lambda x: x[1])
+    return tup
+
+#with sorted function
+def Sorted_list(tup):
+    # reverse = None (Sorts in Ascending order)
+    # key is set to sort using second element of
+    # sublist lambda has been used
+    return (sorted(tup, key=lambda x: x[1]))
+
+
+l1 = [('rishav', 10), ('akash', 5), ('ram', 20), ('gaurav', 15)]
+# printing the sorted list of tuples
+print(Sort_list(l1))
+l2=[(3,4,2),(6,1,3),(5,2,8)]
+print(Sorted_list(l2))
