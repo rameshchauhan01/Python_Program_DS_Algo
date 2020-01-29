@@ -17,6 +17,8 @@ is returned as the final element of the list.
 **re.sub(pattern, repl, string, count=0, flags=0)**    
 **re.subn(pattern, repl, string, count=0, flags=0)**    <br>
 
+**Note:raw string literals, which are exactly the string literals marked by an 'r' before the opening quote.**     
+
 **MetaCharacters**
 are characters that are interpreted in a special way by a RegEx engine. Here's a list of metacharacters:
 
