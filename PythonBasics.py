@@ -1,3 +1,15 @@
+#Python Data Type:
+
+'''
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:	set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+'''
+
 #Format
 #associating the list values using comprehension
 L1 = [4,2,3]
@@ -12,10 +24,13 @@ for i in range(1,11):
  # or print("%d*%d=%d" %(n,i,n*i))
 
  #-----------------------------
+
 #Python | Add similar value multiple times for list,string,tuple
+
 # Method 1: Using * operator
 res = (3,) * 5
 print ("The filtered list is : " + str(res)) #The filtered list is : (3, 3, 3, 3, 3)
+
 #Method #2 : Using extend() + list comprehension
 res = []
 res.extend([3 for i in range(5)])
