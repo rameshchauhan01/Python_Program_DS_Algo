@@ -1,11 +1,21 @@
-import random
+#List Vs Tuple
+'''
+import dis :The dis module disassembles the byte code for a function
+e.g:dis.dis(function
+1.accessing an element generates identical code for both,
+2.assigning a tuple is much faster than assigning a list.
+3.creating a tuple is faster than List.
+4.Lists have several built-in methods compare to tuple
+5.List is more error prone compare to tuple due to mutable nature
+6.List consume more memory than tuple
+'''
 
+
+import random
 Start = 0
 Stop = 20
 limit = 5
-
 RandomListOfIntegers = [random.randint(Start, Stop) for iter in range(limit)]
-
 print(RandomListOfIntegers)
 
 # Yield successive n-sized
