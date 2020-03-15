@@ -25,14 +25,14 @@ def reverse_wordInSen(s):
 ##Reverse the words in a given string or print word of string in reverse order e.g: 'Today is monday' > 'monday is Today'
 def reverse_sentence(s):
     news=s.split(" ")
-    revs=news[-1::-1]
+    revs=news[::-1]
     nres=" ".join(revs)
     return nres
 #Reverse  string according to the number of words e.g: 'Today is monday' > 'monday is Today'
 def reverse_sentenceNOW(s):
     news=s.split(" ")
     revs=[news[i] for i in range(len(news)) if i%2==0]
-    wd=revs[-1::-1]
+    wd=revs[::-1]
     evenRev=" ".join(wd)
     revs1=[news[i] for i in range(len(news)) if i%2!=0]
     evenRev1=" ".join(revs1)
