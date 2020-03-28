@@ -1,5 +1,4 @@
-#Python Data Type:
-
+# Python Data Type: Mainly seven data type are exist in python
 '''
 Text Type:	str
 Numeric Types:	int, float, complex
