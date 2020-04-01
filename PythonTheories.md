@@ -1,11 +1,11 @@
-# Type Hinting or Anotation is Python: <br>
+## Type Hinting or Anotation is Python: <br>
 1. argument anotations 2. return type anotations 3.variable anotations   
 **Python is dynamically typed language**, and the authors have no desire to ever make type hints mandatory(Anotations), even by convention.
 The Python runtime does not enforce function and variable type annotations. They can be used by third party tools such as type checkers, IDEs, linters, etc.
 
 Type annotations should not be confused with variable declarations in statically typed languages.    
 The goal of annotation syntax is to provide an easy way to specify structured type metadata for third party tools.   
-# Module in python: 
+## Module in python: 
 a module is a file consisting of Python code. A module can define functions, classes and variables. A module can also include runnable code.      
 # Some Common Built in Functions     
 |Function Name|Description|
@@ -41,7 +41,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 |setattr(object, attribute, value)|Sets an attribute (property/method) of an object|
 |getattr(object, attribute)|Returns the value of the specified attribute (property or method)|             
 
-*String functions:*   
+## String functions: 
 |Function Name|Description|
 |-------------|-----------|
 |split(separator,maxsplit)|Splits the string at the specified separator, and returns a list :txt = "apple#banana#cherry" x = txt.split("#", 1) print(x)>>>['apple', 'banana#cherry']|
@@ -63,7 +63,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 |isspace()|Returns True if all characters in the string are whitespaces|
 |zfill()|Fills the string with a specified number of 0 values at the beginning|
 
-*List functions:*   
+## List functions:  
 |Function Name|Description|
 |-------------|-----------|
 |append(elmnt)|Adds an element at the end of the list|
@@ -79,7 +79,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 |sort(reverse=True|False, key=myFunc)|Sorts the list:reverse=True will sort the list descending. Default is reverse=False|
 
 
-*Dictionary functions:*   
+## Dictionary functions:   
 |Function Name|Description|
 |-------------|-----------|
 |get(keyname, value)|Returns the value of the specified key: value is optional|
@@ -94,13 +94,13 @@ a module is a file consisting of Python code. A module can define functions, cla
 |clear()|Removes all the elements from the dictionary|
 |copy()|Returns a copy of the dictionary|
 
-*Tuple functions:*   
+## Tuple functions:   
 |Function Name|Description|
 |-------------|-----------|
 |count(elmnt)|Returns the number of times a specified value occurs in a tuple|
 |index(elmnt)|Searches the tuple for a specified value and returns the position of where it was found|
 
-*Set functions:*   
+## Set functions:   
 |Function Name|Description|
 |-------------|-----------|
 |add()|Adds an element to the set|
