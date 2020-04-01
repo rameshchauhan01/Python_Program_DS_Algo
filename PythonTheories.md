@@ -39,5 +39,86 @@ a module is a file consisting of Python code. A module can define functions, cla
 |callable(object)|Returns True if the specified object is callable, otherwise False|
 |super()|Returns an object that represents the parent class|
 |setattr(object, attribute, value)|Sets an attribute (property/method) of an object|
-|getattr(object, attribute)|Returns the value of the specified attribute (property or method)|
+|getattr(object, attribute)|Returns the value of the specified attribute (property or method)|             
+
+*String functions:*   
+|Function Name|Description|
+|-------------|-----------|
+|split(separator,maxsplit)|Splits the string at the specified separator, and returns a list :txt = "apple#banana#cherry" x = txt.split("#", 1) print(x)>>>['apple', 'banana#cherry']|
+|join(iterable)|Joins the elements of an iterable to the end of the string:mylist = ["Ramesh","India" mySeparator = "," x = mySeparator.join(myDict) print(x)>>>Ramesh,India|
+|format(value1, value2...)|Formats specified values in a string:Table of 3>> for i in range(1,11): x='{}*{}={}'.format(3,i,3*i)|
+|strip(characters)|Returns a trimmed version of the string,Here characters is optional|
+|replace(oldvalue, newvalue, count)|Returns a string where a specified value is replaced with a specified value: count is optional and default count for each occurance|
+|count(value, start, end)|Returns the number of times a specified value occurs in a string: start and end are optional|
+|find(value, start, end)|Searches the string for a specified value and returns the position of where it was found:start and end are optional|
+|index(value, start, end)|Same as find except If the value is not found, the find() method returns -1, but the index() method will raise an exception|
+|format_map(dictionary)|Formats specified values in a string for dict values:a = {'x':'John', 'y':'Wick'} print("{x}'s last name is {y}".format_map(a)) >>>John's last name is Wick|
+|title()|Converts the first character of each word to upper case|
+|capitalize()|Converts the first character to upper case|
+|upper()|Converts a string into upper case|
+|swapcase()|Swaps cases, lower case becomes upper case and vice versa|
+|center()|Returns a centered string|
+|endswith(value, start, end)|Returns true if the string ends with the specified value|
+|islower()|Returns True if all characters in the string are lower case|
+|isspace()|Returns True if all characters in the string are whitespaces|
+|zfill()|Fills the string with a specified number of 0 values at the beginning|
+
+*List functions:*   
+|Function Name|Description|
+|-------------|-----------|
+|append(elmnt)|Adds an element at the end of the list|
+|extend(iterable)|Add the elements of a list (or any iterable), to the end of the current list|
+|insert(pos, elmnt)|Adds an element at the specified position|
+|pop(index)|Removes the element at the specified position|
+|remove(elmnt)|Removes the first item with the specified value|
+|clear()|Removes all the elements from the list|
+|copy()|Returns a copy of the list|
+|count(elmnt)|Returns the number of elements with the specified value|
+|index(elmnt)|Returns the index of the first element with the specified value|
+|reverse()|Reverses the order of the list|
+|sort(reverse=True|False, key=myFunc)|Sorts the list:reverse=True will sort the list descending. Default is reverse=False|
+
+
+*Dictionary functions:*   
+|Function Name|Description|
+|-------------|-----------|
+|get(keyname, value)|Returns the value of the specified key: value is optional|
+|items()|Returns a list containing a tuple for each key value pair|
+|keys()|Returns a list containing the dictionary's keys|
+|fromkeys(keys, value)|Returns a dictionary with the specified keys and value:x = ('key1', 'key2', 'key3') y = 0 thisdict = dict.fromkeys(x, y) print(thisdict)>>>['key1': 0, 'key2': 0, 'key3': 0]|
+|pop(key, defaultvalue)|Removes the element with the specified key|
+|popitem()|Removes the last inserted key-value pair|
+|setdefault(keyname, value)|Returns the value of the specified key. If the key does not exist: insert the key, with the specified value|
+|update(dictiterable)|Updates the dictionary with the specified key-value pairs|
+|values()|Returns a list of all the values in the dictionary|
+|clear()|Removes all the elements from the dictionary|
+|copy()|Returns a copy of the dictionary|
+
+*Tuple functions:*   
+|Function Name|Description|
+|-------------|-----------|
+|count(elmnt)|Returns the number of times a specified value occurs in a tuple|
+|index(elmnt)|Searches the tuple for a specified value and returns the position of where it was found|
+
+*Set functions:*   
+|Function Name|Description|
+|-------------|-----------|
+|add()|Adds an element to the set|
+|clear()|Removes all the elements from the set|
+|copy()|Returns a copy of the set|
+|difference()|Returns a set containing the difference between two or more sets|
+|difference_update()|Removes the items in this set that are also included in another, specified set|
+|discard()|Remove the specified item|
+|intersection()|Returns a set, that is the intersection of two other sets|
+|intersection_update()|Removes the items in this set that are not present in other, specified set(s)|
+|isdisjoint()|Returns whether two sets have a intersection or not|
+|issubset()|Returns whether another set contains this set or not|
+|issuperset()Returns whether this set contains another set or not|
+|pop()|Removes an element from the set|
+|remove()|Removes the specified element|
+|symmetric_difference()|Returns a set with the symmetric differences of two sets|
+|symmetric_difference_update()|inserts the symmetric differences from this set and another|
+|union()|Return a set containing the union of sets|
+|update()|Update the set with the union of this set and others|
+
 
