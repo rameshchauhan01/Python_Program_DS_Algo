@@ -1,4 +1,4 @@
-# Python Data Type: Mainly seven data type are exist in python
+#### Python Data Type: Mainly seven data type are exist in python
 '''
 Text Type:	str
 Numeric Types:	int, float, complex
@@ -8,23 +8,57 @@ Set Types:	set, frozenset
 Boolean Type:	bool
 Binary Types:	bytes, bytearray, memoryview
 '''
-
-#Format
-#associating the list values using comprehension
+### List, List Stack, List Queue, List Tree, List Graph
+#associating#formate the list values using comprehension
 L1 = [4,2,3]
 L2=['a','b']
 L3=['{}{}'.format(x, y) for y in L1 for x in L2]
 print(L3) #['a4','b4','a2','b2','a3','b3']
+
+##sort the second items in the list contains tuple
+# with sort function
+def Sort_list(l):
+    # reverse = None (Sorts in Ascending order)
+    # key is set to sort using second element of
+    # sublist lambda has been used
+    l.sort(key=lambda x: x[1])
+    return l
+#with sorted function
+def Sorted_list(l):
+    # reverse = None (Sorts in Ascending order)
+    # key is set to sort using second element of
+    # sublist lambda has been used
+    return (sorted(l, key=lambda x: x[1]))
+
+l1 = [('rishav', 10), ('akash', 5), ('ram', 20), ('gaurav', 15)]
+# printing the sorted list of tuples
+print(Sort_list(l1))
+l2=[(3,4,2),(6,1,3),(5,2,8)]
+print(Sorted_list(l2))
+#Swap the list wihtout using third variable,#It is also called the packing and unpacking
+l1,l2=l2,l1
+
+#append all zeros at the end  of array
+def moveZeros(arr):
+    return [nonZero for nonZero in arr if nonZero != 0] + [Zero for Zero in arr if Zero == 0]
+# creating the list using the iterator it can be usefull to pass the different size list in unit test
+List = []
+# Adding elements to the List
+# using Iterator
+for i in range(4):
+    List.append(i)
+    print (List)
+# Adding Tuples to the List
+List.append((8, 9))
+print("\nList after Addition of a Tuple: ")
+print(List)
 
 # Print the multiplication table
 n=10
 for i in range(1,11):
  print('{}*{}={}'.format(n,i,n*i))
  # or print("%d*%d=%d" %(n,i,n*i))
-
- #-----------------------------
-
-#Python | Add similar value multiple times for list,string,tuple
+##Python | Add similar value multiple times for list,string,tuple
 
 # Method 1: Using * operator
 res = (3,) * 5
@@ -40,7 +74,7 @@ from itertools import repeat
 res = []
 res.extend(repeat(3, 5))
 print("The filtered list is : " + str(res))
-
+### Strings
 #Use operators with strings:
 #1)+ used to cancatenete or join the strings e.g >>> print ("Hi Ramesh"+'!!!') #Hi Ramesh!!!
 #2)* multiplication operator represent the replication of the string. if n is negative or zero it returns the blank
@@ -56,61 +90,74 @@ print("The filtered list is : " + str(res))
 #4)Access and extract portions of strings :  slicing is used
 #5)Use built-in Python functions with characters and strings
 #6)Use methods to manipulate and modify string data : Most frequent split and join function are used.
-## Reverse individual words in a sentence e.g: 'Today is monday' > 'yadoT si yadnom'
-def reverse_wordInSen(s):
-    news=s.split(" ")
-    revs=[res[::-1] for res in news]
-    nres=" ".join(revs)
-    return nres
-#For above code there is best approach if traversing the string from both ends
+## string reverse ways:: input:'Today is mothers day' Output: yad srehtom si yadoT
+#Using slice
+def reverse_slice(s):
+    return s[::-1]
+#Using loop
+def reverse_loop(s):
+  str = ""
+  for i in s:
+    str = i + str
+  return str
+#using recursion
+def reverse_rec(s):
+    if len(s) == 0:
+        return s
+    else:
+        return reverse_rec(s[1:]) + s[0]
+#Using Reversed function
+def reverse_reversed(string):
+    string = "".join(reversed(string))
+    return string
+# Using List reverse
+def reverse_list(s):
+    temp_list = list(s)
+    temp_list.reverse()
+    return ''.join(temp_list)
+#Note: Slice is efficient than others approaches
 
-##Reverse the words in a given string or print word of string in reverse order e.g: 'Today is monday' > 'monday is Today'
-def reverse_sentence(s):
-    news=s.split(" ")
-    revs=news[::-1]
-    nres=" ".join(revs)
-    return nres
-#Reverse  string according to the number of words e.g: 'Today is monday' > 'monday is Today'
-def reverse_sentenceNOW(s):
-    news=s.split(" ")
-    revs=[news[i] for i in range(len(news)) if i%2==0]
-    wd=revs[::-1]
-    evenRev=" ".join(wd)
-    revs1=[news[i] for i in range(len(news)) if i%2!=0]
-    evenRev1=" ".join(revs1)
-    nres=evenRev+" "+evenRev1
-    return nres
+##String reverse in different type using slice
+#Python reverse string input:'Today is mothers day' Output: yadoT si srehtom yad
+def sReverse_without_place_swap(s):
+    words=s.split(" ")
+    reversen= [i[::-1] for i in words]
+    final=' '.join(reversen)
+    return final
+#Python reverse string input:'Today is mothers day' Output: day mothers is Today
+def sWordPlaceSwap(s):
+    words = s.split(" ")
+    reversen = words[::-1]
+    final = ' '.join(reversen)
+    return final
 
-#Driver code
-s='Today is monday uff'
-print(reverse_wordInSen(s))
-print(reverse_sentence(s))
-print(reverse_sentenceNOW(s))
-import unittest
-class TestSentenceReverse(unittest.TestCase):
-
-    def test_reverse_wordInSen(self):
-        s1 = ''
-        s2 = '1 2 3 4'
-        s3 = 'Rainy day!'
-
-        self.assertEqual(reverse_wordInSen(s1), s1)
-        self.assertEqual(reverse_wordInSen(s2), '1 2 3 4')
-        self.assertEqual(reverse_wordInSen(s3), 'yniaR !yad')
-
-    def test_reverse_sentence(self):
-        s1 = ''
-        s2 = '1 2 3 4'
-        s3 = 'Rainy day!'
-
-        self.assertEqual(reverse_sentence(s1), s1)
-        self.assertEqual(reverse_sentence(s2), '4 3 2 1')
-        self.assertEqual(reverse_sentence(s3), 'day! Rainy')
-
-if __name__ == '__main__':
-    unittest.main()
-
-#List Vs Tuple
+## number(integer) reverse:: input:123 output:321
+# Integer reverse using integer divide
+def numberRev(n):
+    result=''
+    oldn=n
+    rev=0
+    while n>0:
+        rem=n%10
+        rev=rev*10 +rem
+        n=n//10
+    #return rev
+    print(n)
+    print(oldn)
+    print(rev)
+    if oldn==rev:
+        result='Magical'
+    else:
+        result='Nonmagical'
+    return result
+#integer reverse using the conersions
+def number_reverse_conversions(n):
+    s=str(n)
+    rev=s[::-1]
+    revers=int(rev)
+    return revers
+   
+### List Vs Tuple
 '''
 import dis :The dis module disassembles the byte code for a function
 e.g:dis.dis(function
@@ -121,15 +168,7 @@ e.g:dis.dis(function
 5.List is more error prone compare to tuple due to mutable nature
 6.List consume more memory than tuple
 '''
-
-
-import random
-Start = 0
-Stop = 20
-limit = 5
-RandomListOfIntegers = [random.randint(Start, Stop) for iter in range(limit)]
-print(RandomListOfIntegers)
-
+##
 # Yield successive n-sized
 # chunks from given list.
 def divide_chunks(l, n):
@@ -140,58 +179,8 @@ def divide_chunks(l, n):
         This is the critical difference from a regular function. 
         A regular function cannot comes back where it left off. 
         The yield keyword helps a function to remember its state."""
-
-
 # Driver code
 my_list = [2,1,4,3,5,6,7,8]
 n = 3
 x = list(divide_chunks(my_list, n))
 print(x)
-# creating the list using the iterator it can be usefull to pass the different size list in unit test
-List = []
-# Adding elements to the List
-# using Iterator
-for i in range(4):
-    List.append(i)
-    print (List)
-# Adding Tuples to the List
-List.append((8, 9))
-print("\nList after Addition of a Tuple: ")
-print(List)
-
-#sort the second items in the list contains tuple
-#with sort function
-def Sort_list(l):
-    # reverse = None (Sorts in Ascending order)
-    # key is set to sort using second element of
-    # sublist lambda has been used
-    l.sort(key=lambda x: x[1])
-    return l
-
-#with sorted function
-def Sorted_list(l):
-    # reverse = None (Sorts in Ascending order)
-    # key is set to sort using second element of
-    # sublist lambda has been used
-    return (sorted(l, key=lambda x: x[1]))
-
-
-l1 = [('rishav', 10), ('akash', 5), ('ram', 20), ('gaurav', 15)]
-# printing the sorted list of tuples
-print(Sort_list(l1))
-l2=[(3,4,2),(6,1,3),(5,2,8)]
-print(Sorted_list(l2))
-#Swap the list wihtout using third variable
-l1,l2=l2,l1
-print (l1)
-print (l2)
-
-#append all zeros at the end  of array
-def moveZeros(arr):
-    return [nonZero for nonZero in arr if nonZero != 0] + [Zero for Zero in arr if Zero == 0]
-
-# Driver function
-if __name__ == "__main__":
-    arr = [1, 2, 0, 4, 3, 0, 5, 0]
-    print(moveZeros(arr))
-
