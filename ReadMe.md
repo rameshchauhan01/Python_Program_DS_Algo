@@ -18,7 +18,7 @@ Object oriented programing systems: object, class, function, inheritance, Polymo
 Definition and concepts about the python
 
 ### Python_Modules  
-OS, sys, requests, json, jsonpath, math, openpyxl,re 
+OS, sys,collections, requests, json, jsonpath, math, openpyxl,re 
 
 ### RegularExpressions  
 regex and pattern matching
