@@ -1,4 +1,4 @@
-# Fibonacci using Dynamic programing:
+### Dynamic programing:
 '''DP: Breaking problem into subproblems and stores the results of subproblems to avoid computing the same results again
 Two main properties of a problem that suggests that the given problem can be solved using Dynamic programming.
 1) Overlapping Subproblems
@@ -17,6 +17,7 @@ Steps to solve a DP
 4) Do tabulation (or add memoization)
 
 '''
+## Fibonacci + DP + Recursion
 def fibonacci(n):
     # Taking 1st two fibonacci nubers as 0 and 1
     FibArray = [0, 1]
@@ -37,8 +38,30 @@ def fibonacci(n):
     FibArray[n] = FibArray[n - 2] + FibArray[n - 1]
     return FibArray[n]
 print(fibonacci(7))
+## Number of Subarray with given sum and array
+def ar_sum_dp(ar,total,i,mem):
+    key=str(total) + ":"+ str(i)
+    if key in mem:
+        return mem[key]
+    #Base case
+    if total==0:
+        return 1
+    elif total<0:
+        return 0
+    elif i<0:
+        return 0
+    elif total<ar[i]:
+        to_return=ar_sum_dp(ar,total,i-1,mem)
+    else:
+        to_return=(ar_sum_dp(ar,total-ar[i],i-1,mem) + ar_sum_dp(ar,total,i-1,mem))
+        mem[key]=to_return
+    return to_return   
 
-#Bubble sort, using swaping in python
+def count_set_sub( ar,total):
+    mem={}
+    return ar_sum_dp(ar,total,len(ar)-1,mem)
+
+### Bubble sort, using swaping in python
 def bubbleSort(arr):
     n = len(arr)
     # Traverse through all array elements
@@ -54,10 +77,8 @@ def bubbleSort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 print(bubbleSort(arr))
 
-# Binary Search function and unit test class to test the function
+# Binary Search function 
 # Print the search value index in the sequence
-import unittest
-
 def binary_search(array, t):
     l = 0
     h = len(array) - 1
@@ -72,22 +93,10 @@ def binary_search(array, t):
             h = m - 1
 
     return -1
-
 print(binary_search([5,3,1,2,4],4))
 print(binary_search([5,3,1,2,4],6))
 
-class TestBinarySearch(unittest.TestCase):
-
-    def test_binary_search(self):
-        self.assertEqual(binary_search([], 3), -1)
-        self.assertEqual(binary_search([1, 2], 3), -1)
-        self.assertEqual(binary_search([1, 2, 3, 4], 3), 2)
-        self.assertEqual(binary_search([1, 2, 3, 4, 5], 3), 2)
-        self.assertEqual(binary_search([1, 2, 3, 4], 3), 2)
-        self.assertEqual(binary_search([1, 2, 3, 4], 1), 0)
-        self.assertEqual(binary_search([1, 2, 3, 4], 4), 3)
-
-# Linear search function and unit test class for testing the linear search function.
+# Linear search function for unsorted array.
 def linear_search(arr,item):
 
     for i in range(len(arr)):
@@ -96,20 +105,4 @@ def linear_search(arr,item):
 
     return False
 
-# Linear search Driver code
-'''printing the linear_search function retuns values on sample test data'''
-arrlist=[3,2,78,34,23]
-item=78
-print(linear_search(arrlist,item))
-'''unit test cases in one function for the linear_search function'''
-# Linear search unit test
-class TestLinearSearch(unittest.TestCase):
-
-    def test_linear_search(self):
-        self.assertEqual(linear_search([], 3), False)
-        self.assertEqual(linear_search([1, 2], 3), False)
-        self.assertEqual(linear_search([1, 2, 3, 4], 3), True)
-        self.assertEqual(linear_search([1, 2, 3, 4, 5], 5), True)
-
-if __name__ == '__main__':
-    unittest.main()
+# Linear search function for sorted array
