@@ -17,27 +17,41 @@ Steps to solve a DP
 4) Do tabulation (or add memoization)
 
 '''
-## Fibonacci + DP + Recursion
-def fibonacci(n):
-    # Taking 1st two fibonacci nubers as 0 and 1
-    FibArray = [0, 1]
-
-    while len(FibArray) < n + 1:
-        FibArray.append(0)
-        print(FibArray)
-
-    if n <= 1:
-        return n
-    else:
-        if FibArray[n - 1] == 0:
-            FibArray[n - 1] = fibonacci(n - 1)
-
-        if FibArray[n - 2] == 0:
-            FibArray[n - 2] = fibonacci(n - 2)
-
-    FibArray[n] = FibArray[n - 2] + FibArray[n - 1]
-    return FibArray[n]
-print(fibonacci(7))
+## Fibonacci
+#Pure recursion
+def fibnn(n):
+    #base case
+    if n==1 or n==2:
+        return 1
+    else:        
+        result=fibnn(n-1)+fibnn(n-2)        
+    return result 
+#Recursion + memoization
+def fib_memo(n,memo):
+    if memo[n] is not None:
+        return memo[n]
+    #base case
+    if n==1 or n==2:
+        return 1
+    else:        
+        result=fib_memo(n-1,memo)+fib_memo(n-2,memo) 
+        memo[n]=result
+    return result 
+def fib_mem(n):
+    memo=[None]*(n+1)
+    return fib_memo(n,memo)
+# Recursion +bottom up
+def fib_buttom_up(n):
+    if n==1 or n==2:
+        return 1
+    bottom=[None]*(n+1)
+    bottom[1]=1
+    bottom[2]=1
+        
+    for i in range(3,n+1):
+        bottom[i]=fib_buttom_up(i-1)+fib_buttom_up(i-2)
+    return bottom[n]
+''' Recursion +buttom up is the best in any case big o is o(n)'''
 ## Number of Subarray with given sum and array
 def ar_sum_dp(ar,total,i,mem):
     key=str(total) + ":"+ str(i)
