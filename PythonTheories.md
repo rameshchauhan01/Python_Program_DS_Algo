@@ -22,7 +22,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 |map(function, iterables)|Returns the specified iterator with the specified function applied to each item|
 |enumerate(iterable, start)|Takes a collection (e.g. a tuple) and returns it as an enumerate object:L = ['apples', 'bananas', 'oranges']for idx, val in enumerate(L)print("index is %d and value is %s" % (idx, val))|
 |range(start, stop, step)|Returns a sequence of numbers, starting from 0 and increments by 1 (by default)|
-|zip(iterator1, iterator2...)|Returns an iterator, from two or more iterators
+|zip(iterator1, iterator2...)|Returns an iterator,create tupe for same index values|    
 |reversed(iterator)|Returns a reversed iterator|
 |slice(start, end, step)|Returns a slice object|
 |sorted(iterable, key=key, reverse=reverse)|Returns a sorted list:You cannot sort a list that contains BOTH string values AND numeric values.|
