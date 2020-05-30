@@ -10,6 +10,23 @@ print( os.path.abspath('..\\')) # return parent to parent dir path
 print( os.path.abspath('..\\ostest.py')) #append the file name in parent to parent dir
 print( os.path.realpath('..')) # return parent to parent dir path
 
+print(os.path.dirname(os.path.realpath(__file__)).rsplit(os.sep, 3)[0]) #Return the 3 level up path forn current working dir
+print(os.environ)#all the directories of all user environment variables
+print(os.listdir()) #returns a list of files and the folders in the current directory.
+
+##os.stat() function returns the list of details about the file or the directory name given in the argument
+print(os.stat('ostest.py').st_mtime)
+print(os.stat('ostest.py').st_size)
+
+##os.walk():Traverses and produces the directory path, the direct within that path and the files within that path. It is useful to keep track of all the directories.
+#return 3 list
+for dirpath, dirname, filename in os.walk('C://Users//DELL//PycharmProjects//Selenium'):
+    print('Current path: ',dirpath)
+    print('Directories: ', dirname)
+    print('Files: ', filename)
+##Remove the file/dir from the path
+print(os.remove('C://Users//DELL//PycharmProjects//api-ui-mobile-automation-frameworks//.github//workflows//tes34')) 
+
 ## find all files in a directory with extension .txt ?
 for file in os.listdir("F:/"):
     if file.endswith(".txt"):
