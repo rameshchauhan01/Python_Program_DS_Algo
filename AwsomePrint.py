@@ -92,6 +92,6 @@ However, locking is expensive and reduces concurrent throughput, so other means 
 such as atomic variables or the compare-and-swap algorithm.
 
 Printing isn’t thread-safe in Python. The print() function holds a reference to the standard output, 
-which is a shared global variable. In theory, because there’s no locking, a context switch could happen 
+which is a shared global variable.In theory, because there’s no locking, a context switch could happen 
 during a call to sys.stdout.write(), intertwining bits of text from multiple print() calls.
 """
