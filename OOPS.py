@@ -1,5 +1,10 @@
+### Dunder or magic methods in Python are __init__, __add__, __len__, __repr__ etc.
+## __int__
+
+
 class Square:
     def __init__(self, side):
+        
         self.side = side
 
     def area(self):
