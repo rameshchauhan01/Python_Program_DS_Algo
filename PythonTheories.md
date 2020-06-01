@@ -10,8 +10,8 @@ a module is a file consisting of Python code. A module can define functions, cla
 # Some Common Built in Functions     
 |Function Name|Description|
 |------------------|-----------|
-|dir()|	Returns a list of the specified object's properties and methods|
-|help()|Executes the built-in help system
+|dir()|	Returns a list of functions are implemented in each module.print(dir(math))|
+|help()|After locating our desired function in the module, we can read more about it using the help function.help(math.factorial)|    
 |eval(expression,globals, locals)|Evaluates and executes an expression:x = 'print(55) eval(x)>>>55|
 |exec(object, globals, locals)|Executes the specified code (or object)|
 |min(iterable)|	Returns the smallest item in an iterable|
