@@ -55,3 +55,40 @@ print(math.floor(3.9)) # Lover integer value to number =>3
 print(math.ceil(3.9)) #Greater integer to number =>4
 
 ### Sys module
+
+### Collections Module
+## Counter
+from collections import Counter
+my_list=['red', 'blue', 'red', 'green', 'blue', 'blue']
+print(Counter(my_list)) #Retun the tuple dictionary values having occurance of element
+print(Counter(my_list)['bacon'] ) # return 0
+print(Counter(my_list)['blue'] ) # return 3
+del( Counter(my_list)['green'] ) # remove green entry
+# most_common() function: Find the 9 most common words in Hamlet text file
+words = re.findall(r'\w+', open('installedapiversioninfo').read().lower())
+print(Counter(words).most_common(9))
+print(Counter(words).most_common(3)[2]) #from Top 3 tuple return index value 2 tuple
+print(Counter(words).most_common(3)[2][0]) #Retuen the Tuple firtvalue(key)
+print(Counter(words).most_common(3)[2][1]) #Retuen the Tuple second value(value or occurence)
+
+# elements() function: Elements are returned in the order first encountered
+my_list1='sdsjsffjfj'
+c = Counter(my_list1)
+print(sorted(c.elements())) # Return list of occured elements
+
+# subtract() function:
+d = Counter(d=1, f=1, j=2, s=1)
+c.subtract(d)
+print(c) # return subtracted occurence and print most duplicate first
+
+# User full operaions:
+sum(c.values())                 # total of all counts
+c.clear()                       # reset all counts
+list(c)                         # list unique elements
+set(c)                          # convert to a set
+dict(c)                         # convert to a regular dictionary
+c.items()                       # convert to a list of (elem, cnt) pairs
+#Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
+#c.most_common()[:-n-1:-1]       # n least common elements
++c                              # remove zero and negative counts
+ ###
