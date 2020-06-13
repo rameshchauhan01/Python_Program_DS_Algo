@@ -88,7 +88,29 @@ list(c)                         # list unique elements
 set(c)                          # convert to a set
 dict(c)                         # convert to a regular dictionary
 c.items()                       # convert to a list of (elem, cnt) pairs
-#Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
-#c.most_common()[:-n-1:-1]       # n least common elements
 +c                              # remove zero and negative counts
- ###
+-c                              # remove zero and positive counts
+c + d                       # add two counters together:  c[x] + d[x]
+c - d                       # subtract (keeping only positive counts)
+c & d                       # intersection:  min(c[x], d[x])
+c | d                       # union:  max(c[x], d[x])
+
+
+### deque
+from collections import deque
+d = deque('ghi')                 # make a new deque with three items
+d.append('j')                    # add a new entry to the right side
+d.appendleft('f')                # add a new entry to the left side
+d.pop()                          # return and remove the rightmost item
+d.popleft()                      # return and remove the leftmost item
+list(d)                          # list the contents of the deque
+d[0]                             # peek at leftmost item
+d[-1]                            # peek at rightmost item
+list(reversed(d))                # list the contents of a deque in reverse
+'h' in d                         # search the deque
+d.extend('jkl')                  # add multiple elements at once  =>deque(['g', 'h', 'i', 'j', 'k', 'l'])
+d.rotate(1)                      # right rotation=>deque(['l', 'g', 'h', 'i', 'j', 'k'])
+d.rotate(-1)                     # left rotation =>deque(['g', 'h', 'i', 'j', 'k', 'l'])
+deque(reversed(d))               # make a new deque in reverse order =>deque(['l', 'k', 'j', 'i', 'h', 'g'])
+d.clear()                        # empty the deque
+
