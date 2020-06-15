@@ -114,3 +114,20 @@ d.rotate(-1)                     # left rotation =>deque(['g', 'h', 'i', 'j', 'k
 deque(reversed(d))               # make a new deque in reverse order =>deque(['l', 'k', 'j', 'i', 'h', 'g'])
 d.clear()                        # empty the deque
 
+### defaultdict
+# means that if a key is not found in the dictionary, then instead of a KeyError being thrown, a new entry is created.
+# The type of this new entry is given by the argument of defaultdict.
+from collections import defaultdict
+somedict = {}
+print(somedict[3]) # KeyError
+
+someddict = defaultdict(int)
+print(someddict[3]) # print int(), thus 0
+#example to get the key with values
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)  # => {}
+for k, v in s:
+    d[k].append(v) #=>defaultdict(<class 'list'>, {'yellow': [1]})
+print(sorted(d.items())) #=>[('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
+print(d['yellow']) # => [1,3]
+
