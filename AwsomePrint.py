@@ -95,3 +95,10 @@ Printing isn’t thread-safe in Python. The print() function holds a reference t
 which is a shared global variable.In theory, because there’s no locking, a context switch could happen 
 during a call to sys.stdout.write(), intertwining bits of text from multiple print() calls.
 """
+### File handling 
+my_file_path='E://AutoTestFiles//MyTestFile.txt'
+with open(my_file_path) as robj:
+    my_data=robj.read()  # return class string  (all data printed)
+    myd1=robj.readline() # return class string  (only first line printed)
+    myoj=robj.readlines() #return class list (all lines printed in list form)
+    
