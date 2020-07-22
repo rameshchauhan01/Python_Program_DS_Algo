@@ -1,3 +1,5 @@
+### Input /Output
+## Print/Output
 import os
 """
 Syntax: print(value(s), sep= ‘ ‘, end = ‘\n’, file=file, flush=flush)
@@ -95,10 +97,32 @@ Printing isn’t thread-safe in Python. The print() function holds a reference t
 which is a shared global variable.In theory, because there’s no locking, a context switch could happen 
 during a call to sys.stdout.write(), intertwining bits of text from multiple print() calls.
 """
-### File handling 
+ 
+## File handling 
+'''
+"r" - Read - Default value. Opens a file for reading, error if the file does not exist
+"a" - Append - Opens a file for appending, creates the file if it does not exist
+"w" - Write - Opens a file for writing, creates the file if it does not exist
+"x" - Create - Creates the specified file, returns an error if the file exists
+"r+" -Read and Write: Open the file for reading and writing. ...
+"w+" -Write and Read: Open the file for reading and writing. ...
+In addition you can specify if the file should be handled as binary or text mode
+"t" - Text - Default value. Text mode
+"b" - Binary - Binary mode (e.g. images)
+f = open("demofile.txt", "rt")
+Because "r" for read, and "t" for text are the default values, you do not need to specify them.'''
+
+# Read files
 my_file_path='E://AutoTestFiles//MyTestFile.txt'
 with open(my_file_path) as robj:
     my_data=robj.read()  # return class string  (all data printed)
     myd1=robj.readline() # return class string  (only first line printed)
     myoj=robj.readlines() #return class list (all lines printed in list form)
     
+# Write files
+with open(my_file_path,'w') as robj:
+    robj.write("See you soon!")  #Writes the specified string to the file.
+    robj.writelines(["See you soon!", "Over and out."])  # Writes a list of strings to the file.
+# Append files
+with open(my_file_path,'a') as robj:
+    robj.write("See you soon! Ha ha\n")  
