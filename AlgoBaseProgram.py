@@ -42,6 +42,8 @@ def fib_mem(n):
     return fib_memo(n,memo)
 # Recursion +bottom up
 def fib_buttom_up(n):
+    if type(n)!=int:
+        print("Invalid input value")     
     if n==1 or n==2:
         return 1
     bottom=[None]*(n+1)
@@ -51,6 +53,7 @@ def fib_buttom_up(n):
     for i in range(3,n+1):
         bottom[i]=fib_buttom_up(i-1)+fib_buttom_up(i-2)
     return bottom[n]
+
 ''' Recursion +buttom up is the best in any case big o is o(n)'''
 ## Number of Subarray with given sum and array
 def ar_sum_dp(ar,total,i,mem):
