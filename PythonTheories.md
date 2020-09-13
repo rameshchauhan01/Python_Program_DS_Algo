@@ -76,8 +76,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 |count(elmnt)|Returns the number of elements with the specified value|
 |index(elmnt)|Returns the index of the first element with the specified value|
 |reverse()|Reverses the order of the list|
-|sort(reverse=True|False, key=myFunc)|Sorts the list:reverse=True will sort the list descending. Default is reverse=False|
-
+|sort(reverse=True|False, key=myFunc)|Sorts the list:reverse=True will sort the list descending. Default is reverse=False|  
 
 ## Dictionary functions:   
 |Function Name|Description|
@@ -119,8 +118,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 |symmetric_difference()|Returns a set with the symmetric differences of two sets|
 |symmetric_difference_update()|inserts the symmetric differences from this set and another|
 |union()|Return a set containing the union of sets|
-|update()|Update the set with the union of this set and others|
-
+|update()|Update the set with the union of this set and others|    
 
 ## re functions and Regular expressions: <br>
 **re.search(pattern, string, flags=0)** Returns a Match object if there is a match anywhere in the string    
@@ -132,7 +130,7 @@ a module is a file consisting of Python code. A module can define functions, cla
 **re.purge()** Clear the regular expression cache.    
 **exception re.error(msg, pattern=None, pos=None)**   
 **re.escape(pattern)**   Escape special characters in pattern.    
-**Example:   
+**Example:**      
 prog = re.compile(pattern)     
 result = prog.match(string)     
 is equivalent to     
@@ -163,12 +161,12 @@ $:Dolar>is used to check if a string ends with a certain character.
 [^arn]	Returns a match for any character EXCEPT a, r, and n .It also behave as complement(invert)   
 [^0-9] means any non-digit character  
 [0-9]{2, 4} matches at least 2 digits but not more than 4 digits  
-## Special Sequences:    
+**Special Sequences:**       
 A special sequence is a \ followed by one of the characters in the list below, and has a special meaning: <br>  
 \d	Returns a match where the string contains digits (numbers from 0-9)    
 \b	Returns a match where the specified characters are at the beginning or at the end of a word   
 \s	Returns a match where the string contains a white space character  
 \w	Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character) <br> 
 \Z - Matches if the specified characters are at the end of a string    
-**Note : If we used the capital letter in above patterns then it will complement the above matching sequence 
+**Note : If we used the capital letter in above patterns then it will complement the above matching sequence**     
 
