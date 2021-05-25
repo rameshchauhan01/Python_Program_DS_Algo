@@ -82,7 +82,7 @@ c.subtract(d)
 print(c) # return subtracted occurence and print most duplicate first
 
 # User full operaions:
-sum(c.values())                 # total of all counts
+sum(c.values())                 # its same as len(string)
 c.clear()                       # reset all counts
 list(c)                         # list unique elements
 set(c)                          # convert to a set
@@ -91,9 +91,9 @@ c.items()                       # convert to a list of (elem, cnt) pairs
 +c                              # remove zero and negative counts
 -c                              # remove zero and positive counts
 c + d                       # add two counters together:  c[x] + d[x]
-c - d                       # subtract (keeping only positive counts)
-c & d                       # intersection:  min(c[x], d[x])
-c | d                       # union:  max(c[x], d[x])
+c - d                       # print the element from c which is not in d
+c & d                       # common elements in both :  min(c[x], d[x])
+c | d                       # combine all:  max(c[x], d[x])
 
 
 ### deque
