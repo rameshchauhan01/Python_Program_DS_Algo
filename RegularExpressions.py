@@ -10,6 +10,8 @@
     re.findall(pattern, string, flags=0) - Return all non-overlapping matches of pattern in string, as a list of strings or tuples.
     Examples:
     re.split(r'\W+', 'Words, words, words.')
+    re.search(r'\bf[a-z]*', 'which foot or hand fell fastest')
+    re.finditer(r'\bf[a-z]*', 'which foot or hand fell fastest')
     re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
 
 #split a string into fields, but the delimiters (and spacing around them) aren’t consistent throughout the string.
