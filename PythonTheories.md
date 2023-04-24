@@ -168,5 +168,17 @@ A special sequence is a \ followed by one of the characters in the list below, a
 \s	Returns a match where the string contains a white space character  
 \w	Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character) <br> 
 \Z - Matches if the specified characters are at the end of a string    
-**Note : If we used the capital letter in above patterns then it will complement the above matching sequence**     
+**Note : If we used the capital letter in above patterns then it will complement the above matching sequence** <br/>
+
+## Operators <br/>
+**and**:
+The and operator returns the first operand if it evaluates to False, otherwise it returns the second operand. In Python, 0, False, None, '' (empty string), [] (empty list), {} (empty dictionary), and () (empty tuple) are considered False values. <br/>  In the below statement, neither first_num nor second_num are False values, so the and operator returns second_num, which is 5. <br/>
+
+first_num=14 
+second_num=5
+print(first_num and second_num) --> 5 <br/>
+
+**&**: 
+The & operator is a bitwise operator that performs a bitwise AND operation on two integers example: <br/>
+print(first_num & second_num) --> 14(1110) & (0101)=> 4
 
